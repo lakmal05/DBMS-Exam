@@ -16,6 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 import model.student;
+import util.CrudUtil;
 
 import java.sql.*;
 
@@ -152,6 +153,34 @@ public class StudentForm {
         loadAllstudent();
     }
 
+    public void btnUpdateOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        student s = new student(
+                txtStudentId.getText(), txtStudentName.getText(), txtEmail.getText(), txtContact.getText(), txtAddress.getText(),txtNic.getText()
+        );
+
+        try {
+            boolean isUpdated = CrudUtil.execute("UPDATE ijse.student SET studentName=? , email=? , contact=? , address=?,nic=? WHERE studentId=?", s.getStudentName(), s.getEmail(), s.getContact(), s.getAddress(), s.getStudentId(),s.getNic());
+            if (isUpdated) {
+
+
+
+
+
+
+            } else {
+
+
+
+
+            }
+
+
+        } catch (SQLException | ClassNotFoundException e) {
+
+        }
+        loadAllstudent();
+
+    }
 
 
 
@@ -161,8 +190,101 @@ public class StudentForm {
 
 
 
+    public void btnStudentdeleteOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+
+      /*  Image image = new Image("saved.png");
 
 
+        Notifications notBuilder = Notifications.create()
+                .title("Warning").title("Supplier Has been Deleted !!!").graphic(new ImageView(image)).hideAfter(Duration.seconds(5)).position(Pos.BOTTOM_RIGHT).onAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        System.out.println("Clicked Oon Notification");
+                    }
+                });
+        notBuilder.darkStyle();
+
+        notBuilder.show();*/
+
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ijse", "root", "1234");
+            String sql = "DELETE FROM ijse.student WHERE studentId ='" + txtStudentId.getText() + "'";
+
+            Statement statement = con.createStatement();
+            boolean isDeleted = statement.executeUpdate(sql) > 0;
+
+
+            if (isDeleted) {
+                //Conformation
+            } else {
+                //Conformation
+            }
+
+
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+
+        }
+        clearTextFields();
+        loadAllstudent();
+
+
+    }
+
+
+
+ public void clearTextFields(){
+
+ }
+
+
+    public void btnSearchOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unionchemistspharmacy", "root", "1234");
+            String sql = "SELECT * FROM ijse.student    WHERE studentId ='" + searchStudentField.getText() + "'";
+
+            Statement statement = con.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+
+
+            if (resultSet.next()) {
+                txtStudentId.setText(resultSet.getString(1));
+                txtStudentName.setText(resultSet.getString(2));
+                txtEmail.setText(resultSet.getString(3));
+                txtContact.setText(resultSet.getString(4));
+                txtAddress.setText(resultSet.getString(5));
+                txtNic.setText(resultSet.getString(6));
+            } else {
+                //Conformation
+              /*  Image image = new Image("Delete.png");
+
+
+                Notifications notBuilder = Notifications.create()
+                        .title("Success").title(" Something Went Wrong! Try Again !!").graphic(new ImageView(image)).hideAfter(Duration.seconds(5)).position(Pos.BOTTOM_RIGHT).onAction(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                System.out.println("Clicked Oon Notification");
+                            }
+                        });
+                notBuilder.darkStyle();
+                notBuilder.show();
+*/
+
+            }
+
+
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+
+        }
+        loadAllstudent();
+        clearTextFields();
+
+    }
 
 
 
