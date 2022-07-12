@@ -8,6 +8,7 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -154,21 +155,19 @@ public class StudentForm {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-        student s = new student(
+       student s = new student(
                 txtStudentId.getText(), txtStudentName.getText(), txtEmail.getText(), txtContact.getText(), txtAddress.getText(),txtNic.getText()
         );
 
         try {
-            boolean isUpdated = CrudUtil.execute("UPDATE ijse.student SET studentName=? , email=? , contact=? , address=?,nic=? WHERE studentId=?", s.getStudentName(), s.getEmail(), s.getContact(), s.getAddress(), s.getStudentId(),s.getNic());
+            boolean isUpdated = CrudUtil.execute("UPDATE student SET studentName=? , email=? , contact=? , address=?,email=? WHERE studentId=?", s.getStudentName(), s.getEmail(), s.getContact(), s.getAddress(), s.getEmail(),s.getStudentId());
             if (isUpdated) {
 
 
 
 
 
-
             } else {
-
 
 
 
@@ -182,6 +181,8 @@ public class StudentForm {
 
     }
 
+    
+
 
 
 
@@ -192,19 +193,6 @@ public class StudentForm {
 
     public void btnStudentdeleteOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
 
-      /*  Image image = new Image("saved.png");
-
-
-        Notifications notBuilder = Notifications.create()
-                .title("Warning").title("Supplier Has been Deleted !!!").graphic(new ImageView(image)).hideAfter(Duration.seconds(5)).position(Pos.BOTTOM_RIGHT).onAction(new EventHandler<ActionEvent>() {
-                    @Override
-                    public void handle(ActionEvent event) {
-                        System.out.println("Clicked Oon Notification");
-                    }
-                });
-        notBuilder.darkStyle();
-
-        notBuilder.show();*/
 
 
         try {
