@@ -117,17 +117,6 @@ public class StudentForm {
     public void btnAddToTableOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
 
 
-    /*    Image image = new Image("saved.png");
-
-        Notifications notBuilder = Notifications.create()
-                .title("Success").title(" Medicine Updating Successful !!!").graphic(new ImageView(image)).hideAfter(Duration.seconds(5)).position(Pos.BOTTOM_RIGHT).onAction(new EventHandler<ActionEvent>() {
-                    @Override
-                    public void handle(ActionEvent event) {
-                        System.out.println("Clicked Oon Notification");
-                    }
-                });
-        notBuilder.darkStyle();
-        notBuilder.show();*/
 
 
         student m = new student(
@@ -152,6 +141,7 @@ public class StudentForm {
         }
 
         loadAllstudent();
+        clearTextFields();
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
@@ -164,12 +154,12 @@ public class StudentForm {
             if (isUpdated) {
 
 
-
+                new Alert(Alert.AlertType.CONFIRMATION,"Update Completed").show();
 
 
             } else {
 
-
+                new Alert(Alert.AlertType.ERROR,"Somthing went Wrong Try Again !!!").show();
 
             }
 
@@ -178,10 +168,10 @@ public class StudentForm {
 
         }
         loadAllstudent();
-
+clearTextFields();
     }
 
-    
+
 
 
 
@@ -205,9 +195,9 @@ public class StudentForm {
 
 
             if (isDeleted) {
-                //Conformation
+                new Alert(Alert.AlertType.CONFIRMATION,"Student Delete Completed").show();
             } else {
-                //Conformation
+                new Alert(Alert.AlertType.ERROR,"Somthin went Wrong Try Again ").show();
             }
 
 
@@ -224,6 +214,16 @@ public class StudentForm {
 
 
  public void clearTextFields(){
+
+        txtStudentId.clear();
+        txtStudentName.clear();
+        txtAddress.clear();
+        txtEmail.clear();
+        txtNic.clear();
+        txtContact.clear();
+
+
+
 
  }
 
@@ -247,20 +247,8 @@ public class StudentForm {
                 txtAddress.setText(resultSet.getString(5));
                 txtNic.setText(resultSet.getString(6));
             } else {
-                //Conformation
-              /*  Image image = new Image("Delete.png");
 
 
-                Notifications notBuilder = Notifications.create()
-                        .title("Success").title(" Something Went Wrong! Try Again !!").graphic(new ImageView(image)).hideAfter(Duration.seconds(5)).position(Pos.BOTTOM_RIGHT).onAction(new EventHandler<ActionEvent>() {
-                            @Override
-                            public void handle(ActionEvent event) {
-                                System.out.println("Clicked Oon Notification");
-                            }
-                        });
-                notBuilder.darkStyle();
-                notBuilder.show();
-*/
 
             }
 
@@ -270,7 +258,7 @@ public class StudentForm {
 
         }
         loadAllstudent();
-        clearTextFields();
+        searchStudentField.clear();
 
     }
 

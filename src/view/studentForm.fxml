@@ -5,30 +5,68 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="studentFormContext" prefHeight="556.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentForm">
+<AnchorPane fx:id="studentFormContext" prefHeight="556.0" prefWidth="790.0" stylesheets="@user.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentForm">
    <children>
-      <TableView fx:id="StudentTable" layoutX="29.0" layoutY="232.0" prefHeight="281.0" prefWidth="607.0">
+      <TableView fx:id="StudentTable" layoutX="41.0" layoutY="219.0" prefHeight="281.0" prefWidth="717.0">
         <columns>
-          <TableColumn fx:id="colStudentID" prefWidth="75.0" text="StudentID" />
-          <TableColumn fx:id="colStudentName" prefWidth="131.0" text="Studnet Name" />
-            <TableColumn fx:id="colEmail" prefWidth="69.0" text="Email" />
-            <TableColumn fx:id="colContact" prefWidth="97.0" text="Contact" />
-            <TableColumn fx:id="colAddress" prefWidth="98.0" text="Address" />
-            <TableColumn fx:id="colNic" prefWidth="136.0" text="Nic" />
+          <TableColumn fx:id="colStudentID" prefWidth="98.0" text="StudentID" />
+          <TableColumn fx:id="colStudentName" prefWidth="138.0" text="Studnet Name" />
+            <TableColumn fx:id="colEmail" prefWidth="142.0" text="Email" />
+            <TableColumn fx:id="colContact" prefWidth="110.0" text="Contact" />
+            <TableColumn fx:id="colAddress" prefWidth="103.0" text="Address" />
+            <TableColumn fx:id="colNic" prefWidth="122.0" text="Nic" />
         </columns>
       </TableView>
-      <JFXTextField fx:id="searchStudentField" layoutX="275.0" layoutY="26.0" prefHeight="25.0" prefWidth="210.0" />
-      <JFXButton layoutX="525.0" layoutY="39.0" onAction="#btnSearchOnAction" text="Search" />
-      <JFXButton layoutX="461.0" layoutY="189.0" prefHeight="25.0" prefWidth="130.0" text="CLEAR" />
-      <JFXButton layoutX="547.0" layoutY="146.0" onAction="#btnUpdateOnAction" text="UPDATE" />
-      <JFXButton layoutX="682.0" layoutY="488.0" onAction="#btnStudentdeleteOnAction" text="DELETE" />
-      <JFXButton layoutX="472.0" layoutY="146.0" onAction="#btnAddToTableOnAction" text="ADD" />
-      <JFXTextField fx:id="txtStudentId" layoutX="29.0" layoutY="97.0" prefHeight="25.0" prefWidth="78.0" text="ID" />
-      <JFXTextField fx:id="txtAddress" layoutX="275.0" layoutY="98.0" prefHeight="25.0" prefWidth="78.0" text="Address" />
-      <JFXTextField fx:id="txtContact" layoutX="150.0" layoutY="146.0" prefHeight="25.0" prefWidth="78.0" text="Contact" />
-      <JFXTextField fx:id="txtEmail" layoutX="150.0" layoutY="97.0" prefHeight="25.0" prefWidth="78.0" text="Email" />
-      <JFXTextField fx:id="txtStudentName" layoutX="29.0" layoutY="146.0" prefHeight="25.0" prefWidth="78.0" text="Student Name" />
-      <JFXTextField fx:id="txtNic" layoutX="275.0" layoutY="146.0" prefHeight="25.0" prefWidth="78.0" text="Nic" />
+      <JFXButton buttonType="RAISED" layoutX="496.0" layoutY="27.0" onAction="#btnSearchOnAction" prefHeight="25.0" prefWidth="95.0" styleClass="update" text="Search" textFill="WHITE">
+         <font>
+            <Font name="Georgia Bold" size="16.0" />
+         </font></JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="525.0" layoutY="160.0" prefHeight="31.0" prefWidth="95.0" styleClass="Clear" text="CLEAR" textFill="WHITE">
+         <font>
+            <Font name="Georgia Bold" size="16.0" />
+         </font></JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="665.0" layoutY="97.0" onAction="#btnUpdateOnAction" styleClass="update" text="UPDATE" textFill="WHITE">
+         <font>
+            <Font name="Georgia Bold" size="16.0" />
+         </font></JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="687.0" layoutY="516.0" onAction="#btnStudentdeleteOnAction" style="-fx-background-color: red;" text="DELETE" textFill="WHITE">
+         <font>
+            <Font name="Georgia Bold" size="14.0" />
+         </font></JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="525.0" layoutY="110.0" onAction="#btnAddToTableOnAction" prefHeight="31.0" prefWidth="95.0" styleClass="Save" text="ADD" textFill="WHITE">
+         <font>
+            <Font name="Georgia Bold" size="16.0" />
+         </font></JFXButton>
+      <JFXTextField fx:id="txtStudentId" layoutX="29.0" layoutY="97.0" prefHeight="27.0" prefWidth="95.0" promptText="ID">
+         <font>
+            <Font name="Consolas Bold" size="13.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtAddress" layoutX="304.0" layoutY="97.0" prefHeight="27.0" prefWidth="156.0" promptText="Address">
+         <font>
+            <Font name="Consolas Bold" size="13.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtContact" layoutX="150.0" layoutY="146.0" prefHeight="27.0" prefWidth="116.0" promptText="Contact">
+         <font>
+            <Font name="Consolas Bold" size="13.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtEmail" layoutX="150.0" layoutY="97.0" prefHeight="27.0" prefWidth="116.0" promptText="Email">
+         <font>
+            <Font name="Consolas Bold" size="13.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtStudentName" layoutX="29.0" layoutY="147.0" prefHeight="27.0" prefWidth="109.0" promptText="Student Name">
+         <font>
+            <Font name="Consolas Bold" size="13.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtNic" layoutX="321.0" layoutY="146.0" prefHeight="27.0" prefWidth="148.0" promptText="Nic">
+         <font>
+            <Font name="Consolas Bold" size="13.0" />
+         </font></JFXTextField>
+      <AnchorPane layoutX="217.0" layoutY="26.0" prefHeight="32.0" prefWidth="235.0" styleClass="textPane">
+         <children>
+            <JFXTextField fx:id="searchStudentField" layoutX="25.0" layoutY="6.0" prefHeight="25.0" prefWidth="210.0" promptText="           Search ID and Click button" styleClass="textField" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
