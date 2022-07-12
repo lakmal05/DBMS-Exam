@@ -6,17 +6,16 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="556.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentForm">
+<AnchorPane fx:id="studentFormContext" prefHeight="556.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentForm">
    <children>
-      <TableView layoutX="74.0" layoutY="211.0" prefHeight="281.0" prefWidth="607.0">
+      <TableView fx:id="StudentTable" layoutX="77.0" layoutY="236.0" prefHeight="281.0" prefWidth="607.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="StudentID" />
-          <TableColumn prefWidth="131.0" text="Studnet Name" />
-            <TableColumn prefWidth="69.0" text="Email" />
-            <TableColumn prefWidth="97.0" text="Contact" />
-            <TableColumn prefWidth="98.0" text="Address" />
-            <TableColumn prefWidth="136.0" text="Nic" />
+          <TableColumn fx:id="colStudentID" prefWidth="75.0" text="StudentID" />
+          <TableColumn fx:id="colStudentName" prefWidth="131.0" text="Studnet Name" />
+            <TableColumn fx:id="colEmail" prefWidth="69.0" text="Email" />
+            <TableColumn fx:id="colContact" prefWidth="97.0" text="Contact" />
+            <TableColumn fx:id="colAddress" prefWidth="98.0" text="Address" />
+            <TableColumn fx:id="colNic" prefWidth="136.0" text="Nic" />
         </columns>
       </TableView>
       <JFXTextField layoutX="275.0" layoutY="26.0" prefHeight="25.0" prefWidth="210.0" />
@@ -25,5 +24,11 @@
       <JFXButton layoutX="535.0" layoutY="109.0" text="UPDATE" />
       <JFXButton layoutX="439.0" layoutY="109.0" text="DELETE" />
       <JFXButton layoutX="352.0" layoutY="109.0" text="ADD" />
+      <JFXTextField fx:id="txtStudentId" layoutX="29.0" layoutY="145.0" prefHeight="25.0" prefWidth="78.0" />
+      <JFXTextField fx:id="txtAddress" layoutX="512.0" layoutY="158.0" prefHeight="25.0" prefWidth="78.0" />
+      <JFXTextField fx:id="txtContact" layoutX="416.0" layoutY="158.0" prefHeight="25.0" prefWidth="78.0" />
+      <JFXTextField fx:id="txtEmail" layoutX="313.0" layoutY="158.0" prefHeight="25.0" prefWidth="78.0" />
+      <JFXTextField fx:id="txtStudentName" layoutX="172.0" layoutY="155.0" prefHeight="25.0" prefWidth="78.0" />
+      <JFXTextField fx:id="txtNic" layoutX="605.0" layoutY="168.0" prefHeight="25.0" prefWidth="78.0" />
    </children>
 </AnchorPane>
