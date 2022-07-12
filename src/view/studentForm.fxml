@@ -18,12 +18,12 @@
             <TableColumn fx:id="colNic" prefWidth="136.0" text="Nic" />
         </columns>
       </TableView>
-      <JFXTextField layoutX="275.0" layoutY="26.0" prefHeight="25.0" prefWidth="210.0" />
+      <JFXTextField fx:id="searchStudentField" layoutX="275.0" layoutY="26.0" prefHeight="25.0" prefWidth="210.0" />
       <JFXButton layoutX="525.0" layoutY="39.0" text="Searcu" />
       <JFXButton layoutX="605.0" layoutY="109.0" text="CLEAR" />
       <JFXButton layoutX="535.0" layoutY="109.0" text="UPDATE" />
       <JFXButton layoutX="439.0" layoutY="109.0" text="DELETE" />
-      <JFXButton layoutX="352.0" layoutY="109.0" text="ADD" />
+      <JFXButton layoutX="352.0" layoutY="109.0" onAction="#btnAddToTableOnAction" text="ADD" />
       <JFXTextField fx:id="txtStudentId" layoutX="29.0" layoutY="145.0" prefHeight="25.0" prefWidth="78.0" />
       <JFXTextField fx:id="txtAddress" layoutX="512.0" layoutY="158.0" prefHeight="25.0" prefWidth="78.0" />
       <JFXTextField fx:id="txtContact" layoutX="416.0" layoutY="158.0" prefHeight="25.0" prefWidth="78.0" />

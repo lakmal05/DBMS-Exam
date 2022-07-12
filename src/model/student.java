@@ -9,6 +9,27 @@ public class student {
     private String nic;
 
 
+
+
+
+
+    public student() {
+    }
+
+    public student(String studentId, String studentName, String email, String contact, String address, String nic) {
+        this.studentId =studentId;
+        this.studentName = studentName;
+        this.email = email;
+        this.contact = contact;
+        this.address = address;
+        this.nic = nic;
+    }
+
+
+
+
+
+
     public String getStudentId() {
         return studentId;
     }
