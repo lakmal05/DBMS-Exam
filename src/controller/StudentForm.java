@@ -6,16 +6,11 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.util.Duration;
 import model.student;
 import util.CrudUtil;
 
@@ -113,14 +108,11 @@ public class StudentForm {
     }
 
 
-
     public void btnAddToTableOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
 
 
-
-
         student m = new student(
-               txtStudentId.getText(), txtStudentName.getText(), txtEmail.getText(), txtContact.getText(), txtAddress.getText(), txtNic.getText()
+                txtStudentId.getText(), txtStudentName.getText(), txtEmail.getText(), txtContact.getText(), txtAddress.getText(), txtNic.getText()
         );
 
 
@@ -145,21 +137,21 @@ public class StudentForm {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-       student s = new student(
-                txtStudentId.getText(), txtStudentName.getText(), txtEmail.getText(), txtContact.getText(), txtAddress.getText(),txtNic.getText()
+        student s = new student(
+                txtStudentId.getText(), txtStudentName.getText(), txtEmail.getText(), txtContact.getText(), txtAddress.getText(), txtNic.getText()
         );
 
         try {
-            boolean isUpdated = CrudUtil.execute("UPDATE student SET studentName=? , email=? , contact=? , address=?,email=? WHERE studentId=?", s.getStudentName(), s.getEmail(), s.getContact(), s.getAddress(), s.getEmail(),s.getStudentId());
+            boolean isUpdated = CrudUtil.execute("UPDATE student SET studentName=? , email=? , contact=? , address=?,email=? WHERE studentId=?", s.getStudentName(), s.getEmail(), s.getContact(), s.getAddress(), s.getEmail(), s.getStudentId());
             if (isUpdated) {
 
 
-                new Alert(Alert.AlertType.CONFIRMATION,"Update Completed").show();
+                new Alert(Alert.AlertType.CONFIRMATION, "Update Completed").show();
 
 
             } else {
 
-                new Alert(Alert.AlertType.ERROR,"Somthing went Wrong Try Again !!!").show();
+                new Alert(Alert.AlertType.ERROR, "Somthing went Wrong Try Again !!!").show();
 
             }
 
@@ -168,21 +160,11 @@ public class StudentForm {
 
         }
         loadAllstudent();
-clearTextFields();
+        clearTextFields();
     }
 
 
-
-
-
-
-
-
-
-
-
     public void btnStudentdeleteOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-
 
 
         try {
@@ -195,9 +177,9 @@ clearTextFields();
 
 
             if (isDeleted) {
-                new Alert(Alert.AlertType.CONFIRMATION,"Student Delete Completed").show();
+                new Alert(Alert.AlertType.CONFIRMATION, "Student Delete Completed").show();
             } else {
-                new Alert(Alert.AlertType.ERROR,"Somthin went Wrong Try Again ").show();
+                new Alert(Alert.AlertType.ERROR, "Somthin went Wrong Try Again ").show();
             }
 
 
@@ -212,8 +194,7 @@ clearTextFields();
     }
 
 
-
- public void clearTextFields(){
+    public void clearTextFields() {
 
         txtStudentId.clear();
         txtStudentName.clear();
@@ -223,9 +204,7 @@ clearTextFields();
         txtContact.clear();
 
 
-
-
- }
+    }
 
 
     public void btnSearchOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
@@ -249,7 +228,6 @@ clearTextFields();
             } else {
 
 
-
             }
 
 
@@ -263,17 +241,16 @@ clearTextFields();
     }
 
 
+    public void cleartBtn(ActionEvent actionEvent) {
+        txtStudentId.clear();
+        txtStudentName.clear();
+        txtAddress.clear();
+        txtEmail.clear();
+        txtNic.clear();
+        txtContact.clear();
+
+        searchStudentField.clear();
 
 
-
-
-
-
-
-
-
-
-
-
-
+    }
 }
