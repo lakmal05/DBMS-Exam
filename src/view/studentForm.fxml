@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="556.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentForm">
+   <children>
+      <TableView layoutX="74.0" layoutY="211.0" prefHeight="281.0" prefWidth="607.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="StudentID" />
+          <TableColumn prefWidth="131.0" text="Studnet Name" />
+            <TableColumn prefWidth="69.0" text="Email" />
+            <TableColumn prefWidth="97.0" text="Contact" />
+            <TableColumn prefWidth="98.0" text="Address" />
+            <TableColumn prefWidth="136.0" text="Nic" />
+        </columns>
+      </TableView>
+      <JFXTextField layoutX="275.0" layoutY="26.0" prefHeight="25.0" prefWidth="210.0" />
+      <JFXButton layoutX="525.0" layoutY="39.0" text="Searcu" />
+      <JFXButton layoutX="605.0" layoutY="109.0" text="CLEAR" />
+      <JFXButton layoutX="535.0" layoutY="109.0" text="UPDATE" />
+      <JFXButton layoutX="439.0" layoutY="109.0" text="DELETE" />
+      <JFXButton layoutX="352.0" layoutY="109.0" text="ADD" />
+   </children>
+</AnchorPane>
